@@ -1,0 +1,19 @@
+<apex:page >
+ <apex:includeLightning />
+
+ <div id="MS_LoginSheetComponent" />
+
+ <script>
+ $Lightning.use("c:MS_LoginSheetApplication", function() {
+    $Lightning.createComponent("c:MS_LoginSheet",
+    {
+        //Pass parameters to your lightning component here
+    },
+    "MS_LoginSheetComponent",
+    function(cmp) {
+        console.log('>> MS_LoginSheet Component created on page');
+    });
+ });
+ </script>
+
+</apex:page>
