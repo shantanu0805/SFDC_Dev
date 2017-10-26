@@ -8,24 +8,28 @@
     },
 
     openAndLogin : function(component, event, helper) {
+       var el = event.srcElement;
+       var id = el.dataset.id;
+       console.log('>> id : ' + id);
        var loginUrl = event.target.id;
        console.log('>> loginUrl : ' + loginUrl);
+       component.set('v.selectedLogin', id);
+       console.log('>> selectedLogin : ' + component.get("v.selectedLogin"));
+       helper.updateLastViewed(component, event, helper);
        window.open(loginUrl);
     },
 
     openAndEdit : function(component, event, helper) {
-        //window.open("https://www.w3schools.com");
         var id = event.target.id;
         console.log('>> Id : ' + id);
-        var editUrl =  '/' + id + '/e';
+        var editUrl =  '/' + id + '/e?retURL=apex/MS_LoginSheetPage';
         window.open(editUrl);
     },
 
     addCredential : function(component, event, helper) {
-        //window.open("https://www.w3schools.com");
         var id = event.target.id;
         console.log('>> Id : ' + id);
-        var newRecordUrl =  '/a0B/e?retURL=%2Fa0B%2Fo';
+        var newRecordUrl =  '/a7o/e?retURL=apex/MS_LoginSheetPage'; 
         window.open(newRecordUrl);
     },
 
@@ -75,5 +79,12 @@
        console.log('>> Inside openSlack');
        var openSlackUrl = 'https://makepositive.slack.com/messages/G5UKQPHTM/';
        window.open(openSlackUrl);
+    },
+
+    raiseCase : function(component, event, helper) {
+     
+       console.log('>> Inside raiseCase');
+       var newRecordUrl =  '/500/e?RecordType=0127E00000053ma&cas4=Make%20Positive%20Ltd&retURL=apex/MS_LoginSheetPage';
+       window.open(newRecordUrl);
     }
 })

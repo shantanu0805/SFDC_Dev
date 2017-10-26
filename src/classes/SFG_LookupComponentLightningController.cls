@@ -102,6 +102,7 @@ public without sharing class SFG_LookupComponentLightningController {
                 }
 
                 log.debug('The queryString is ', queryString);
+                System.debug('>> The queryString is : ' + queryString);
 
                 List<sObject> sobjList = Database.query(queryString);
 
