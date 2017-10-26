@@ -85,7 +85,7 @@
         <div id="{!v.resultsHolderId}" style="padding: 1%;" class="{!'results-holder ' + (v.resultsOpen == true ? 'visible' : 'hidden')}" aura:id="resultsHolder" onmouseenter="{!c.onKeepList}" onmouseleave="{!c.offKeepList}">
             <ul aura:id="resultsList" class="{!(v.items.length > 0) ? '' : 'hidden'}">
                 <aura:iteration items="{!v.items}" var="item" indexVar="index">
-                    <li onclick="{!c.selectItem}" data-item="{!index}" style="cursor: pointer; padding: 1%;" class="resultLi">
+                    <li onclick="{!c.selectItem}" data-item="{!index}" style="cursor: pointer; padding: 1%;" class="resultLi" >
                         <aura:unescapedHtml value="{!item._combinedLabel}" />
                     </li>
                 </aura:iteration>

@@ -1,6 +1,7 @@
 .THIS .columnHdr{
     font-weight: bold;
 }
-.THIS .slds-item_detail {
-	color: purple;
+.THIS .clientPrprty{    
+	color: darkblue;
+    font-weight: 600;
 }

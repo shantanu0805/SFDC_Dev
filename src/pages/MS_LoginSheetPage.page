@@ -1,19 +1,39 @@
 <apex:page >
+<!--  
+
+** Managed Services Mission Control 
+** Author : Shantanu Srivastava(shantanu.srivastava@makepositive.com)
+** This one page applciation is internally viewed in salesforce by the ms support user to access client login credentials and other 	utilities.
+** October 2017
+-->
  <apex:includeLightning />
-
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
  <div id="MS_LoginSheetComponent" />
-
+<style>
+	#topBtn{
+	    float: right;
+	    padding: 1%;
+	    cursor: pointer;
+	}
+</style>
  <script>
- $Lightning.use("c:MS_LoginSheetApplication", function() {
-    $Lightning.createComponent("c:MS_LoginSheet",
-    {
-        //Pass parameters to your lightning component here
-    },
-    "MS_LoginSheetComponent",
-    function(cmp) {
-        console.log('>> MS_LoginSheet Component created on page');
-    });
- });
+	$Lightning.use("c:MS_LoginSheetApplication", function() {
+		$Lightning.createComponent("c:MS_LoginSheet",
+		{
+		    //Pass parameters to your lightning component here
+		},
+		"MS_LoginSheetComponent",
+		function(cmp) {
+		    console.log('>> MS_LoginSheet Component created on page');
+		});
+	});
+	$(document).ready(function(){
+		$("#topBtn").click(function() {
+			console.log('>> topBtn Clicked');
+			$("html, body").animate({ scrollTop: 0 }, "slow");
+			return false;
+		});
+	});	
  </script>
-
+<a id="topBtn">Go to Top</a>
 </apex:page>

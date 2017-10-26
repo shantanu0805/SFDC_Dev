@@ -76,18 +76,13 @@
 				var respVal = response.getReturnValue();
 				console.log('>> Data returned from Apex Controller : ' + respVal);
 				console.log('>> Client Details : ' + JSON.stringify(respVal));
-				/*
 				console.log('>> Name  : ' + respVal[0].name);
-				console.log('>> Address  : ' + JSON.stringify(respVal[0].address));
 				console.log('>> Contacts  : ' + respVal[0].contacts);
 				console.log('>> Contact Name  : ' + respVal[0].contacts[0].Name);
-				*/
 				component.set('v.clientDetails', respVal[0]);
 				component.set('v.displayResults', false);
 				component.set('v.displayClientDetails', true);
 				component.set('v.showSpinner', false);
-				//var myDiv = document.getElementById("big-div");
-				//myDiv.scrollTop = myDiv.scrollHeight;
 			} else {
 				console.log('Failed to load controller data ' + response.getError());
 				component.set('v.showSpinner', false);
@@ -95,5 +90,33 @@
 		});
 		$A.enqueueAction( action );
 		
+    },
+
+    updateLastViewed : function(component, event, helper) {
+	   
+		console.log('>> Inside Helper > updateLastViewed');
+		component.set('v.showSpinner', true);		
+		var currentTs = Date.now();
+		console.log('>> currentTs : ' + currentTs);
+		var action = component.get('c.updateLastViewed');
+
+		action.setParams({
+			"credentialId" :   component.get('v.selectedLogin')
+		});
+
+		action.setCallback( this, function(response) {
+			var state = response.getState();
+			if( component.isValid() && state === 'SUCCESS' ) {
+				var respVal = response.getReturnValue();
+				console.log('>> response : ' + respVal);
+				component.set('v.showSpinner', false);
+			} else {
+				console.log('Failed to update timestamp ' + response.getError());
+				component.set('v.showSpinner', false);
+			}
+		});
+		$A.enqueueAction( action );
+		
     }
+    
 })
