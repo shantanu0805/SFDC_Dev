@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>*</members>
+        <members>MS_LoginSheetController</members>
+        <members>SFG_AuthorisationService</members>
+        <members>SFG_AuthorisationServiceImpl</members>
+        <members>SFG_Logger</members>
+        <members>SFG_LookupComponentLightningController</members>
+        <members>SFG_LookupComponentLtngCtrlrTest</members>
         <name>ApexClass</name>
     </types>
     <types>
-        <members>*</members>
-        <name>ApexComponent</name>
-    </types>
-    <types>
-        <members>*</members>
+        <members>MS_LoginSheetPage</members>
         <name>ApexPage</name>
     </types>
     <types>
-        <members>*</members>
+        <members>LookupInput</members>
+        <members>LookupInputEvent</members>
+        <members>MS_LoginSheet</members>
+        <members>MS_LoginSheetApplication</members>
         <name>AuraDefinitionBundle</name>
     </types>
-    <version>36.0</version>
+    <types>
+        <members>MS_Client_Login__c</members>
+        <name>CustomObject</name>
+    </types>
+    <version>37.0</version>
 </Package>
