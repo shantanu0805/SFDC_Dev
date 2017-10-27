@@ -1,5 +1,5 @@
-language: python
-python: "2.7"
+language: node_js
+node_js: 0.12
 sudo: false
 branches:
      only:
@@ -11,10 +11,11 @@ script:
         ./build/scripts/deploy.sh; 
     else echo "*** running all tests ***"; 
         ./build/scripts/run_test.sh; 
+     fi   
 notifications: 
     slack: shantanu0805:G6gDQ7s7HqJng2e84QEDwq5m     
 email:
     recipients:
-      # - shantanu0805@gmail.com
+      - shantanu0805@gmail.com
     on_success: always # default: change
     on_failure: always # default: always
