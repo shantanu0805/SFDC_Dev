@@ -83,6 +83,7 @@
         <trackTrending>false</trackTrending>
         <type>EncryptedText</type>
     </fields>
+    <!--
     <fields>
         <fullName>Environment__c</fullName>
         <defaultValue>&quot;Sandbox&quot;</defaultValue>
@@ -107,6 +108,7 @@
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
     </fields>
+    -->
     <fields>
         <fullName>Last_Viewed_TS__c</fullName>
         <description>Last Viewed TimeStamp</description>
