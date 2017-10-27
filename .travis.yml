@@ -5,7 +5,12 @@ branches:
      only:
           - release1.0     
 before_script: ./build/scripts/setup_credentials.sh
-script: ./build/scripts/deploy.sh
+script:  
+    -if [ "$TRAVIS_BRANCH" == "release1.0" ]; 
+      then echo "*** Deploying to Shantanu Dev ***"; 
+        ./build/scripts/deploy.sh; 
+    else echo "*** running all tests ***"; 
+        ./build/scripts/run_test.sh; 
 notifications: 
     slack: shantanu0805:G6gDQ7s7HqJng2e84QEDwq5m     
 email:
