@@ -4,5 +4,7 @@ sudo: false
 branches:
      only:
           - release1.0
+notifications: 
+    slack: shantanu0805:G6gDQ7s7HqJng2e84QEDwq5m          
 before_script: ./build/scripts/setup_credentials.sh
 script: ./build/scripts/deploy.sh
