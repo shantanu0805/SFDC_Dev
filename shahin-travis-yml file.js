@@ -31,7 +31,7 @@ notifications:
       # - k.pintscher@polsource.com 
       # - n.gronowska@polsource.com
       - abid.raqib@santaferelo.com
-      - Naveen.Gurram@santaferelo.com
+      - naveen.gurram@santaferelo.com
       - falgun.naker@santaferelo.com
       # - nbudnicka@salesforce.com
     on_success: always # default: change

@@ -4,11 +4,13 @@ sudo: false
 branches:
      only:
           - release1.0     
+          - devzone     
 before_script: ./build/scripts/setup_credentials.sh
 script: 
     - echo ">>> Deploying to Shantanu Dev <<<"; 
       echo ">>> TRAVIS_BRANCH = " + $TRAVIS_BRANCH; 
       echo ">>> TRAVIS_COMMIT_MESSAGE = " + $TRAVIS_COMMIT_MESSAGE;
+      echo ">>> TRAVIS_EVENT_TYPE = " + $TRAVIS_EVENT_TYPE;
       ./build/scripts/deploy.sh; 
     #    ./build/scripts/run_test.sh; 
     #-if [ "$TRAVIS_BRANCH" == "release1.0" ]; 
