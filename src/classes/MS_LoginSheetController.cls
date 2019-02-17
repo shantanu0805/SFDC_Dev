@@ -21,7 +21,7 @@ public with sharing class MS_LoginSheetController {
             return recentRecords;
         }
         catch(Exception ex){
-            System.debug('>> Exception in getting Client Creds : ' + ex);
+            System.debug('>>> Exception in getting Client Creds : ' + ex);
             return null;
         }
     }
